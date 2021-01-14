@@ -17,7 +17,12 @@ class Table extends Component {
             .then(employees => this.setState({ sortedEmployees: this.state.employees }))
             .then(res => console.log(this.state.employees))
     }
-
+    
+    handleInputChange = (event) => {
+        const employeeName = event.target.value;
+        const searchedEmployeeArray = this.state.employees.filter(employee => employee.name.first.includes(employeeName) || employee.name.last.includes(employeeName));
+        this.setState({ sortedEmployees: searchedEmployeeArray})
+    }
     // sortByName = ()=>{
     //     const sort = sfsf
     // }

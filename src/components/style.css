@@ -8,3 +8,7 @@ img {
 .jumbotron {
     font-family: 'Inria Serif', serif;
 }
+
+input {
+   width: 50%;
+}
