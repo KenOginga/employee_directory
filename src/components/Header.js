@@ -6,16 +6,16 @@ function Header(props){
     <div className="jumbotron text-center">
         <h1 className="display-4">Employee Directory</h1>
         <div className="container text-center">
-                <div className="searchInput">
-                    <input
-                        type="text"
-                        onChange={props.handleInputChange}
-                        value={props.value}
-                        name="search"
-                        className="inputBox input-group"
-                        placeholder="Search by name"
-                    />
-                </div>
+            <div className="searchInput">
+                <input
+                    type="text"
+                    onChange={props.handleInputChange}
+                    value={props.value}
+                    name="search"
+                    className="inputBox input-group"
+                    placeholder="Search by name"
+                />
+            </div>
             <div className="mt-2">
                 <button
                 className="button"
@@ -28,4 +28,4 @@ function Header(props){
     );
 };
 
-export default Header
+export default Header;

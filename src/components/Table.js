@@ -15,8 +15,11 @@ class Table extends Component {
 
     componentDidMount() {
         API.getEmployees()
-            .then(employeesData => this.setState({ employees: employeesData.data.results }))
-            .then(employees => this.setState({ filteredEmployees: this.state.employees }))
+            .then(employeesData => this.setState({
+                employees: employeesData.data.results,
+                filteredEmployees: employeesData.data.results
+            }))
+            .catch(err => console.log(err))
     };
     
     handleInputChange = (event) => {
@@ -24,6 +27,16 @@ class Table extends Component {
         const searchedEmployeeArray = this.state.employees.filter(employee => employee.name.first.includes(employeeName) || employee.name.last.includes(employeeName));
         this.setState({ filteredEmployees: searchedEmployeeArray})
     };
+
+    handleSearch = (event) => {
+        event.preventDefault();
+        if(!this.state.search){
+            alert("Enter Employee Name!")
+        }
+        const { employees, search } = this.state
+        const searchedEmployees = employees.filter(employee => employee.name.first.toLowerCase().includes(search.toLowerCase()));
+        this.setState({ searchedEmployees })
+    }
 
     sortByName = ()=>{
         const sortingList = this.state.filteredEmployees;
