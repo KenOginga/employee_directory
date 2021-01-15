@@ -9,8 +9,8 @@ function Header(props){
             <div className="searchInput">
                 <input
                     type="text"
-                    onChange={props.handleInputChange}
-                    value={props.value}
+                    onChange={ props.handleInputChange }
+                    value={ props.value }
                     name="search"
                     className="inputBox input-group"
                     placeholder="Search by name"
@@ -18,10 +18,11 @@ function Header(props){
             </div>
             <div className="mt-2">
                 <button
-                className="button"
-                value=""
-                onClick={props.handleSearch}
-                >Search</button>
+                    type="submit"
+                    className="button z-depth-2 waves-effect"
+                    value=""
+                    onClick={ props.handleSearch }>Search
+                </button>
             </div>
         </div> 
     </div>
